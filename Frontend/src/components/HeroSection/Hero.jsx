@@ -3,6 +3,9 @@ import Slider from "react-slick";
 import gsap from "gsap";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import About from "../About/About";
+import WhyUs from "../WhyUS/WhyUs";
+import Services from "../Services/Services";
 
 const Hero = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -39,7 +42,7 @@ const Hero = () => {
   useEffect(() => {
     // Clear any existing animations before creating a new one
     tlRef.current.clear();
-    
+
     // Set up GSAP timeline
     tlRef.current = gsap.timeline({ defaults: { ease: "power1.out" } });
 
@@ -71,6 +74,7 @@ const Hero = () => {
   }, [currentSlide]);
 
   return (
+      <>
     <section className="relative text-center text-white min-h-[55vh] md:min-h-[75vh] lg:min-h-screen overflow-hidden">
       <Slider {...settings}>
         {slides.map((slide, index) => (
@@ -117,7 +121,7 @@ const Hero = () => {
                     </span>
                   </div>
                 </div>
-               <button
+                <button
                   className="mt-6 relative h-12 w-40 sm:w-48 overflow-hidden border bg-blue-500 border-blue-500 text-white shadow-2xl transition-all before:absolute before:top-1/2 before:h-0 before:w-64 before:origin-center before:-translate-x-20 before:rotate-45 before:bg-white before:duration-500 rounded-md hover:text-blue-500 hover:shadow-black hover:before:h-64 hover:before:-translate-y-32"
                   ref={(el) => (buttonRefs.current[index] = el)}
                 >
@@ -129,6 +133,12 @@ const Hero = () => {
         ))}
       </Slider>
     </section>
+<About/>
+<Services/>
+<WhyUs/>
+
+</>
+
   );
 };
 

@@ -3,6 +3,7 @@ import { FiShoppingCart, FiUser, FiSearch, FiMenu, FiX } from "react-icons/fi";
 import { FaGraduationCap, FaHome, FaBook, FaChalkboardTeacher, FaFileAlt, FaBlog, FaEnvelope  } from 'react-icons/fa';
 
 import { FaAngleDown } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
   const [dropdownOpen, setDropdownOpen] = useState(null);
@@ -23,7 +24,7 @@ const Navbar = () => {
     { title: "Teachers", icon: <FaChalkboardTeacher />, subItems: ["Teacher 1", "Teacher 2", "Teacher 3"] },
     { title: "Pages", icon: <FaFileAlt />, subItems: ["Page 1", "Page 2", "Page 3"] },
     { title: "Blog", icon: <FaBlog />, subItems: ["Blog 1", "Blog 2", "Blog 3"] },
-    { title: "Contact", icon: <FaEnvelope />, subItems: [] }
+    { title: <Link to="/Contact">Contact</Link>, icon: <FaEnvelope />, subItems: [] }
   ];
 
   return (
