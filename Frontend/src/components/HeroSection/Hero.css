@@ -1,0 +1,15 @@
+@keyframes slideFadeUp {
+    0% {
+      transform: translateY(50px); /* Starts 20px below */
+      opacity: 0;
+    }
+    100% {
+      transform: translateY(0); /* Moves to its final position */
+      opacity: 1;
+    }
+  }
+  
+  .animate-slide-fade {
+    animation: slideFadeUp 3s ease forwards;
+  }
+  
